@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MustacheMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoopertownPrincipal" translatesAutoresizingMaskIntoConstraints="NO" id="prZ-gu-Gjy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="v1I-15-CZG" appends="YES" id="yDk-J4-h4D"/>
+                                </connections>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxp-GN-l6M">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="CCC-Fk-qJo"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="clear" id="hHi-VV-D3b">
+                                        <connections>
+                                            <action selector="clearButton:" destination="BYZ-38-t0r" id="Nbg-kU-hkd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="camera" id="h8d-vs-NHl">
+                                        <connections>
+                                            <action selector="loadImage:" destination="BYZ-38-t0r" id="p2w-uZ-TL6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nxp-GN-l6M" firstAttribute="top" secondItem="prZ-gu-Gjy" secondAttribute="bottom" id="SIS-FU-gXh"/>
+                            <constraint firstItem="prZ-gu-Gjy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UkB-fC-yXk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nxp-GN-l6M" secondAttribute="bottom" id="VfJ-Ht-kjI"/>
+                            <constraint firstItem="nxp-GN-l6M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VsG-8X-VOR"/>
+                            <constraint firstItem="prZ-gu-Gjy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bWM-jX-N4G"/>
+                            <constraint firstAttribute="trailing" secondItem="prZ-gu-Gjy" secondAttribute="trailing" id="cet-eg-qjS"/>
+                            <constraint firstAttribute="trailing" secondItem="nxp-GN-l6M" secondAttribute="trailing" id="nfU-zZ-cne"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myImageView" destination="prZ-gu-Gjy" id="tct-5R-TAH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="v1I-15-CZG">
+                    <connections>
+                        <action selector="addAMust:" destination="BYZ-38-t0r" id="8wl-VF-YRU"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="380" y="304.4977511244378"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CoopertownPrincipal" width="500" height="333"/>
+    </resources>
+</document>
