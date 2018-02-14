@@ -44,6 +44,11 @@
                                             <action selector="loadImage:" destination="BYZ-38-t0r" id="p2w-uZ-TL6"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Switch Picture" id="ikv-ms-AiD">
+                                        <connections>
+                                            <action selector="switchPrincipalButtonSelected:" destination="BYZ-38-t0r" id="EV4-Y7-uqC"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

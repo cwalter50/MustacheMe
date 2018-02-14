@@ -169,6 +169,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         sender?.rotation = 0
     }
     
+    var numberOfTaps: Int = 0
+    
+    @IBAction func switchPrincipalButtonSelected(_ sender: UIBarButtonItem) {
+        if numberOfTaps % 3 == 0 {
+            myImageView.image = #imageLiteral(resourceName: "LynnewoodPrincipal")
+        } else if numberOfTaps % 3 == 1 {
+            myImageView.image = #imageLiteral(resourceName: "CoopertownPrincipal")
+        } else {
+            myImageView.image = #imageLiteral(resourceName: "CoopertownStaff")
+        }
+        numberOfTaps += 1
+        
+    }
     @IBAction func clearButton(_ sender: UIBarButtonItem)
     {
         for view in self.view.subviews
