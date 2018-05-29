@@ -21,6 +21,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        myImageView.image = #imageLiteral(resourceName: "ChristiansonChatham")
         // set imagePickers delegate to self
         picker.delegate = self
     }
@@ -170,15 +171,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     var numberOfTaps: Int = 0
-    
+    var imageArray = [#imageLiteral(resourceName: "CoopertownPrincipal"), #imageLiteral(resourceName: "LynnewoodPrincipal"), #imageLiteral(resourceName: "ChristiansonChatham"), #imageLiteral(resourceName: "DibartolmeloChestnutwald")]
     @IBAction func switchPrincipalButtonSelected(_ sender: UIBarButtonItem) {
-        if numberOfTaps % 3 == 0 {
-            myImageView.image = #imageLiteral(resourceName: "LynnewoodPrincipal")
-        } else if numberOfTaps % 3 == 1 {
-            myImageView.image = #imageLiteral(resourceName: "CoopertownPrincipal")
-        } else {
-            myImageView.image = #imageLiteral(resourceName: "CoopertownStaff")
-        }
+        let imageIndex = numberOfTaps % imageArray.count
+        myImageView.image = imageArray[imageIndex]
+
         numberOfTaps += 1
         
     }
