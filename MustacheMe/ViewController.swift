@@ -12,6 +12,8 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
 
+    @IBOutlet weak var switchPictureButton: UIBarButtonItem!
+    
     @IBOutlet weak var myImageView: UIImageView!
     
     // create global variable for UIImagePicker
@@ -21,25 +23,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myImageView.image = #imageLiteral(resourceName: "ChristiansonChatham")
+//        myImageView.image = #imageLiteral(resourceName: "ChristiansonChatham")
+        switchPictureButton.isEnabled = false // turn on switch picture button when using for STEM Demos
         // set imagePickers delegate to self
         picker.delegate = self
     }
     
     // load imagePickerController
     @IBAction func loadImage(_ sender: UIBarButtonItem) {
-        let sheet = UIAlertController(title: "Select where to get image from", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        let libraryAction = UIAlertAction(title: "PHOTO LIBRARY", style: UIAlertActionStyle.default) { (action) -> Void in
-            self.picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        let sheet = UIAlertController(title: "Select where to get image from", message: nil, preferredStyle: UIAlertController.Style.alert)
+        let libraryAction = UIAlertAction(title: "PHOTO LIBRARY", style: UIAlertAction.Style.default) { (action) -> Void in
+            self.picker.sourceType = .photoLibrary
             self.picker.delegate = self
             self.picker.modalPresentationStyle = .popover
             
             self.present(self.picker, animated: true, completion: nil)
         }
-        let cameraAction = UIAlertAction(title: "CAMERA", style: UIAlertActionStyle.default) { (action) -> Void in
+        let cameraAction = UIAlertAction(title: "CAMERA", style: UIAlertAction.Style.default) { (action) -> Void in
             if UIImagePickerController.availableCaptureModes(for: .rear) != nil
             {
-                self.picker.sourceType = UIImagePickerControllerSourceType.camera
+                self.picker.sourceType = .camera
                 self.picker.allowsEditing = true
                 self.picker.cameraCaptureMode = .photo
                 self.picker.modalPresentationStyle = .fullScreen
@@ -86,12 +89,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     // add Method to set image
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if picker.sourceType == .camera
         {
             // get the image the user selected
-            if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+            if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
             {
                 // set imageview's image and make aspect fit
                 myImageView.contentMode = .scaleAspectFit
@@ -101,7 +103,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         else
         {
             // get the image the user selected
-            if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+            if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
             {
                 // set imageview's image and make aspect fit
                 myImageView.contentMode = .scaleAspectFit
@@ -112,12 +114,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
 
+
     
     @IBAction func addAMust(_ sender: UITapGestureRecognizer)
     {
         let point = sender.location(in: myImageView)
         let width = screenWidth / 5.0
-        let height = width / 2.0
+        let height = width / 1.5
         let mustacheImageView = UIImageView(frame: CGRect(x: point.x, y: point.y, width: width, height: height))
         mustacheImageView.contentMode = .scaleAspectFit
         mustacheImageView.center = point
@@ -144,7 +147,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     // func that handles pan gesture
-    func handlePan(sender: UIPanGestureRecognizer? = nil) {
+    @objc func handlePan(sender: UIPanGestureRecognizer? = nil) {
         let location = sender?.location(in: view)
         let imageView = sender?.view as! UIImageView
         imageView.center = location!
@@ -153,7 +156,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     // func that gets called with pinch Gesture Recognizer
-    func handlePinch(sender: UIPinchGestureRecognizer? = nil) {
+    @objc func handlePinch(sender: UIPinchGestureRecognizer? = nil) {
     
         let scale = sender?.scale
         let imageView = sender?.view as! UIImageView
@@ -163,7 +166,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     // handle rotation Gesture
-    func handleRotation(sender: UIRotationGestureRecognizer? = nil) {
+    @objc func handleRotation(sender: UIRotationGestureRecognizer? = nil) {
         let rotation = sender?.rotation
         let imageView = sender?.view as! UIImageView
         imageView.transform = imageView.transform.rotated(by: rotation!)

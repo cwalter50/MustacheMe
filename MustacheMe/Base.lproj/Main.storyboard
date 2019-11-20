@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lou-Cj-lsb">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MustacheMe-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MustacheMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,50 +19,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoopertownPrincipal" translatesAutoresizingMaskIntoConstraints="NO" id="prZ-gu-Gjy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            <imageView multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CartoonPersonOutline" translatesAutoresizingMaskIntoConstraints="NO" id="prZ-gu-Gjy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="v1I-15-CZG" appends="YES" id="yDk-J4-h4D"/>
                                 </connections>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxp-GN-l6M">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="CCC-Fk-qJo"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="clear" id="hHi-VV-D3b">
-                                        <connections>
-                                            <action selector="clearButton:" destination="BYZ-38-t0r" id="Nbg-kU-hkd"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="camera" id="h8d-vs-NHl">
-                                        <connections>
-                                            <action selector="loadImage:" destination="BYZ-38-t0r" id="p2w-uZ-TL6"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Switch Picture" id="ikv-ms-AiD">
-                                        <connections>
-                                            <action selector="switchPrincipalButtonSelected:" destination="BYZ-38-t0r" id="EV4-Y7-uqC"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nxp-GN-l6M" firstAttribute="top" secondItem="prZ-gu-Gjy" secondAttribute="bottom" id="SIS-FU-gXh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="prZ-gu-Gjy" secondAttribute="bottom" id="4yS-vi-OW2"/>
                             <constraint firstItem="prZ-gu-Gjy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UkB-fC-yXk"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nxp-GN-l6M" secondAttribute="bottom" id="VfJ-Ht-kjI"/>
-                            <constraint firstItem="nxp-GN-l6M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VsG-8X-VOR"/>
                             <constraint firstItem="prZ-gu-Gjy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bWM-jX-N4G"/>
                             <constraint firstAttribute="trailing" secondItem="prZ-gu-Gjy" secondAttribute="trailing" id="cet-eg-qjS"/>
-                            <constraint firstAttribute="trailing" secondItem="nxp-GN-l6M" secondAttribute="trailing" id="nfU-zZ-cne"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="MustacheMe" id="agH-JQ-fWi">
+                        <barButtonItem key="leftBarButtonItem" title="clear" id="hHi-VV-D3b">
+                            <connections>
+                                <action selector="clearButton:" destination="BYZ-38-t0r" id="Nbg-kU-hkd"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="h8d-vs-NHl">
+                                <connections>
+                                    <action selector="loadImage:" destination="BYZ-38-t0r" id="p2w-uZ-TL6"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Switch Picture" id="ikv-ms-AiD">
+                                <connections>
+                                    <action selector="switchPrincipalButtonSelected:" destination="BYZ-38-t0r" id="EV4-Y7-uqC"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="myImageView" destination="prZ-gu-Gjy" id="tct-5R-TAH"/>
+                        <outlet property="switchPictureButton" destination="ikv-ms-AiD" id="ZiE-cU-bdB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -74,10 +66,28 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1319.2" y="304.4977511244378"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1DI-vR-3qR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lou-Cj-lsb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DQr-WK-mmx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="IEK-eO-TZy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6i4-UY-b7O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="380" y="304.4977511244378"/>
         </scene>
     </scenes>
     <resources>
-        <image name="CoopertownPrincipal" width="500" height="333"/>
+        <image name="CartoonPersonOutline" width="189" height="267"/>
     </resources>
 </document>
