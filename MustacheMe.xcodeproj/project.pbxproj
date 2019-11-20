@@ -193,7 +193,7 @@
 				TargetAttributes = {
 					38A4CE3F1CAED47800AB286A = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 84LWTY6T5F;
+						DevelopmentTeam = DNJ75V34FZ;
 						LastSwiftMigration = 0800;
 					};
 					38A4CE531CAED47800AB286A = {
@@ -426,11 +426,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 84LWTY6T5F;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = DNJ75V34FZ;
 				INFOPLIST_FILE = MustacheMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.DocsApps.MustacheMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DocsApps.MustacheMe2019;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -440,11 +441,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 84LWTY6T5F;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = DNJ75V34FZ;
 				INFOPLIST_FILE = MustacheMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.DocsApps.MustacheMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DocsApps.MustacheMe2019;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
